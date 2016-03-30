@@ -1,7 +1,7 @@
 import isPlainObject from 'lodash.isplainobject'
 import { REHYDRATE } from './constants'
 
-module.exports = function autoRehydrate (config = {}) {
+export default function autoRehydrate (config = {}) {
   return (next) => (reducer, initialState, enhancer) => {
     return next(createRehydrationReducer(reducer), initialState, enhancer)
   }
